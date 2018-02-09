@@ -1,26 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {HttpClient} from '@angular/common/http';
+import {AppService} from '../../app/services/app.service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  results = [];
+  movies = [];
   constructor(
     public navCtrl: NavController,
-    private http: HttpClient
+    private service: AppService
   ) {
 
   }
 
   ngOnInit(){
-    this.http.get('https://itunes.apple.com/search?media=all&term=abc')
-    .subscribe((res: any) => {
-      this.results = res.results;
-      console.log(this.results);
-    });
+    this.movies = this.service.getMovieInfo();
   }
 
 }

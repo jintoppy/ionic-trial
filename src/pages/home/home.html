@@ -7,21 +7,25 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid>
-    <ion-row responsive-sm wrap>
-      <ion-col *ngFor="let item of results" col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>
-        <ion-card>
-          <img [src]="item.artworkUrl100" />
-          <ion-card-content>
-            <ion-card-title>
-              Title: {{item.collectionName}}
-              </ion-card-title>
-            <p>
-              Artist: {{item.artistName}}
-            </p>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+              Mail list will come here
+            </ion-col>
+            <ion-col col-6>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-12>
+                          <img src="/assets/imgs/pie-chart.jpg" alt="Pie chart">
+                        </ion-col>  
+                    </ion-row> 
+                    <ion-row>
+                        <ion-col col-12>
+                            <movie-list [data]="movies"></movie-list>           
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>  
+            </ion-col>
+        </ion-row>
+    </ion-grid>  
 </ion-content>
